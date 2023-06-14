@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+
+:root {
+  --Soft-orange: hsl(35, 77%, 62%);
+  --Soft-red: hsl(5, 85%, 63%);
+
+  --Off-white: hsl(36, 100%, 99%);
+  --Grayish-blue: hsl(233, 8%, 79%);
+  --Dark-grayish-blue: hsl(236, 13%, 42%);
+  --Very-dark-blue: hsl(240, 100%, 5%);
+}
+
+/* STYLE RESET */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* GENERAL STYLING */
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--Dark-grayish-blue);
+}
+
+/*  NAV BAR */
+
+nav {
+  padding: 1.8rem 0;
+  width: min(90%, 987px);
+  margin: auto;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  width: 50px;
+  height: 35px;
+}
+
+.nav-bar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.nav-bar ul li a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--Dark-grayish-blue);
+  transition: 0.3s;
+}
+
+.mobile-menu-btn {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  overflow: hidden;
+  transition: width 0.3s;
+}
+
+.mobile-menu > div {
+  width: 70%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: var(--Off-white);
+  opacity: 1;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  overflow: hidden;
+  /* transition: width 0.5s; */
+}
+
+.mobile-menu > div > button {
+  all: unset;
+  align-self: end;
+  cursor: pointer;
+}
+
+.mobile-list {
+  align-self: flex-start;
+  padding: 0;
+  list-style: none;
+}
+
+.mobile-list li {
+  margin-bottom: 1.5rem;
+}
+
+.mobile-list li a {
+  text-decoration: none;
+  color: var(--Very-dark-blue);
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--Soft-red);
+}
+
+/* MAIN STYLE */
+
+main {
+  width: min(90%, 987px);
+  margin: auto;
+  display: grid;
+  grid-template-areas: "one one two" "three four two";
+  gap: 1.3rem;
+}
+
+.image-container {
+  grid-area: one;
+  height: fit-content;
+}
+
+.image-container img {
+  object-fit: cover;
+  min-height: 100%;
+  width: 100%;
+}
+
+.new {
+  grid-area: two;
+  background-color: var(--Very-dark-blue);
+  padding: 1.2rem 1.2rem 0;
+}
+
+.new h2 {
+  color: var(--Soft-orange);
+}
+
+.new > div {
+  padding: 1.2rem 0;
+}
+
+.new > div p {
+  font-size: 0.85rem;
+  color: var(--Off-white);
+}
+
+.new div:nth-child(3) {
+  border-top: solid 1px var(--Off-white);
+  border-bottom: solid 1px var(--Off-white);
+}
+
+.new h3 {
+  color: var(--Off-white);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.heading-text {
+  grid-area: three;
+}
+
+h1 {
+  color: var(--Very-dark-blue);
+  font-weight: 800;
+  font-size: 2.4rem;
+  line-height: 1.2;
+}
+
+.read-more {
+  grid-area: four;
+}
+
+.read-more p {
+  font-size: 0.85rem;
+}
+
+.read-more button {
+  border: solid 1px var(--Soft-red);
+  background-color: var(--Soft-red);
+  color: var(--Off-white);
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  transition: 0.3s;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+
+.read-more button:hover {
+  background-color: transparent;
+  color: var(--Dark-grayish-blue);
+}
+
+.card-container {
+  width: min(90%, 987px);
+  margin: 3rem auto;
+  display: flex;
+  gap: 2rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card h3 {
+  font-size: 0.9rem;
+  color: var(--Very-dark-blue);
+  font-weight: 800;
+}
+
+.card p {
+  font-size: 0.85rem;
+}
+
+.card img {
+  width: 6rem;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  main {
+    grid-template-areas: "one one" "three four" "two two";
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-bar ul {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+    all: unset;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  main {
+    grid-template-areas: "one" "three" "four" "two";
+  }
+}
